@@ -32,10 +32,7 @@ for index, todo in enumerate(todos):
         todos.pop(index)
         util_functions.save_todos(todos)
         st.rerun()
-        # del st.session_state[key]
 
 st.write("")
 st.text_input(key=ElementKeys.NEW_TODO_INPUT, label="New TODO", placeholder="Add a new TODO...",
               on_change=on_add_new_todo)
-
-st.session_state
