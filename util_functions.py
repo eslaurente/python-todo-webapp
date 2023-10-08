@@ -65,7 +65,7 @@ def save_todos(todos: list[str], filename=DEFAULT_FILE) -> None:
         file.writelines("\n".join(todos))
 
 
-def get_command(input_str: str) -> tuple[str, str | None] or None:
+def get_command(input_str: str):
     result = [command for command in
               [Options.add.name,
                Options.edit.name,
