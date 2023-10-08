@@ -24,6 +24,9 @@ def on_add_new_todo():
 st.title("Super Awesome TODO App")
 st.subheader("This app is to increase your productivity!")
 st.write("This is yet another TODO app. Written in Python using the Streamlit framework")
+st.text_input(key=ElementKeys.NEW_TODO_INPUT, label="New TODO", placeholder="Add a new TODO...",
+              on_change=on_add_new_todo)
+st.write("")
 
 for index, todo in enumerate(todos):
     key = f"{ElementKeys.TODO_ITEM_PREFIX.name}-{index}"
@@ -32,7 +35,3 @@ for index, todo in enumerate(todos):
         todos.pop(index)
         util_functions.save_todos(todos)
         st.rerun()
-
-st.write("")
-st.text_input(key=ElementKeys.NEW_TODO_INPUT, label="New TODO", placeholder="Add a new TODO...",
-              on_change=on_add_new_todo)
